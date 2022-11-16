@@ -10,7 +10,7 @@ class PostSerializer(serializers.ModelSerializer):
         # queryset 형태로 pictuer에 넣어둠 -> 시리얼라이저 매개변수로 인스턴스에 쿼리셋을 넣어줌
         # many =ture -> 사진이 많음
         # context -> urldl 절대경로로 안 나옴
-        return PostPictureSerializer(instance=picture, many=True, context=self.context).data
+        return PostPictureSerializer(instance=picture, many=True, context=self.context).data # json 데이터로 변환하여 반환
     
     class Meta:
         model = Post
